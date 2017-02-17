@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :product do
+  factory :review do
     name('lobster')
     description('insect of the sea')
     price(9.99)

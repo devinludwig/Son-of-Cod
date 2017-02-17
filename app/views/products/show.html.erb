@@ -13,9 +13,16 @@
   <%= @product.price %>
 </p>
 
-<ul>
+<ul class="list-group">
   <% @product.reviews.each do |review| %>
-    <li><%= review.content %></li>
+    <li class="list-group-item">
+      <h3>
+        <%= review.content %>
+        <% if can? :manage, @product %>
+            <%= link_to "Delete", product_review_path(review), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right" %>
+        <% end %>
+      </h3>
+    </li>
   <% end %>
 </ul>
 
