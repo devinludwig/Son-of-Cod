@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-  get 'reviews/new'
-
-  get 'reviews/edit'
-
   devise_for :users
-  resources :products
-  resources :users
+  resources :products do
+    resources :reviews, except: [:index, :show]
+  end
   root to: 'products#index'
 end

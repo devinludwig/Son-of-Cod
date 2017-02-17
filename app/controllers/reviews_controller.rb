@@ -3,13 +3,15 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @product = Product.find(params[:product_id])
   end
 
   def create
-    product = Product.find(params[:id])
+    product = Product.find(params[:product_id])
     @review = product.reviews.new(review_params)
+    @review.user_id = current_user.id
     if @review.save
-      redirect_to @review, notice: 'Review was successfully saved'
+      redirect_to product_path(product), notice: 'Review was successfully saved'
     else
       render :new
     end

@@ -22,6 +22,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    authorize! :manage, @product
   end
 
   def update
