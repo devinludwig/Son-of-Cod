@@ -1,1 +1,8 @@
 <h1>Check out our fresh seafood selection!</h1>
+
+<ul>
+  <% @products.each do |product| %>
+    <li><h2><%= link_to product.name + " $" + sprintf('%.2f', product.price), product %></h2><h4>   <%= product.description %>
+</h4></li>
+  <% end %>
+</ul>
