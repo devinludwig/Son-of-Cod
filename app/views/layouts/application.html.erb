@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SonOfCod</title>
+    <title>Son Of Cod</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,21 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to 'Posts', '#' %></li>
+          <% if current_user %>
+          <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
+          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <li><%= link_to 'Login', new_user_session_path %></li>
+          <% end %>
+      </ul>
+    </div>
+    <div class="container">
+      <p id="notice" style="color: green"><%= flash[:notice] %></p>
+      <p id="alert" style="color: red"><%= flash[:alert] %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>
