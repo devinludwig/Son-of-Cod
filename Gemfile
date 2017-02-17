@@ -17,6 +17,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'materialize-sass'
 gem "paperclip", "~> 5.0.0"
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'devise'
+gem 'cancancan'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -35,6 +38,3 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "letter_opener"
 end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'devise'

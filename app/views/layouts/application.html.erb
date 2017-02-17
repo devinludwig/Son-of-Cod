@@ -10,13 +10,19 @@
 
   <body>
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+          <li><%= link_to 'Products', products_path %></li>
+          <% if current_user && current_user.admin == true %>
+            <li><%= link_to 'Add Product', new_product_path %></li>
+          <% end %>
+      </ul>
+
       <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'Posts', '#' %></li>
           <% if current_user %>
-          <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
-          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
           <% else %>
-          <li><%= link_to 'Login', new_user_session_path %></li>
+            <li><%= link_to 'Login', new_user_session_path %></li>
           <% end %>
       </ul>
     </div>
