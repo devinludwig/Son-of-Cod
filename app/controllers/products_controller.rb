@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @picture.destroy
+    @product.destroy
     redirect_to :index
   end
 
