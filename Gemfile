@@ -17,7 +17,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'materialize-sass'
 gem "paperclip", "~> 5.0.0"
 gem 'bootstrap-sass', '~> 3.3.6'
-gem 'devise'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -38,3 +37,4 @@ group :development do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'devise'
