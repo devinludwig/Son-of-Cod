@@ -19,7 +19,8 @@
       <h3>
         <%= review.content %>
         <% if can? :manage, review %>
-            <%= link_to "Delete", product_review_path(@product, review), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right" %>
+          <%= link_to "Delete", product_review_path(@product, review), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right" %>
+          <%= link_to "Edit", edit_product_review_path(@product, review), class: "btn btn-warning pull-right" %>
         <% end %>
       </h3>
     </li>
