@@ -14,7 +14,7 @@
 * _In the Command Line, run:_
 ```
 git clone https://github.com/devinludwig/Son-of-Cod
-cd gummi_bear_kingdom
+cd Son_of_Cod
 bundle install
 postgres
 ```
