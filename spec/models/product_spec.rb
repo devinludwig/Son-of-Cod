@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it do
+    should validate_presence_of(:name)
+    should validate_presence_of(:price)
+    should have_many(:reviews)
+  end
 end

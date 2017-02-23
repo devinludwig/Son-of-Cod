@@ -6,7 +6,8 @@ class Ability
     #
       user ||= User.new # guest user (not logged in)
       if user.admin?
-        can :manage, :all
+        can :manage, Product
+        can [:destroy, :read], Review
       else
         can [:manage, :reviews], Review do |review|
           review.try(:user_id) == user.id

@@ -30,6 +30,7 @@ group :development, :test do
   gem "factory_girl_rails", "~> 4.0"
   gem 'simplecov', require: false
   gem 'rails-controller-testing'
+  gem 'capybara'
 end
 
 group :development do

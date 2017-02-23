@@ -19,7 +19,8 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe ProductsController, type: :controller do
-
+  User.delete_all
+  login_admin
   # This should return the minimal set of attributes required to create a valid
   # Product. As you add validations to Product, be sure to
   # adjust the attributes here as well.
@@ -103,14 +104,14 @@ RSpec.describe ProductsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {"name" => "squid", "description" => "squiggly thing", "price" => 3.99}
       }
 
       it "updates the requested product" do
         product = Product.create! valid_attributes
         put :update, params: {id: product.to_param, product: new_attributes}, session: valid_session
         product.reload
-        skip("Add assertions for updated state")
+        expect(product.attributes).to include( new_attributes )
       end
 
       it "assigns the requested product as @product" do

@@ -12,7 +12,7 @@
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
           <li><%= link_to 'Products', products_path %></li>
-          <% if can? :manage, Product.all %>
+          <% if can? :manage, Product %>
             <li><%= link_to 'Add Product', new_product_path %></li>
           <% end %>
       </ul>
