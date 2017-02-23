@@ -11,10 +11,10 @@
 
 ## To Run:
 
-* _In the Command Line, run:_
+* _In the Command Line, navigate to the Desktop and run:_
 ```
 git clone https://github.com/devinludwig/Son-of-Cod
-cd gummi_bear_kingdom
+cd Son_of_Cod
 bundle install
 postgres
 ```
@@ -33,7 +33,7 @@ localhost:3000
 
 ## Support and contact details
 
-_Contact us on Github at [devinludwig](https://github.com/devinludwig)_
+_Contact me on Github at [devinludwig](https://github.com/devinludwig)_
 
 ## Technologies Used
 
