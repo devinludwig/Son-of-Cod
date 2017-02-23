@@ -1,8 +1,9 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:edit, :update, :destroy]
+   skip_authorize_resource only: [:new, :create]
 
   def new
-    @review = Review.new
+    @review = current_user.reviews.new
     @product = Product.find(params[:product_id])
   end
 
