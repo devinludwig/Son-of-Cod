@@ -8,6 +8,9 @@ class Ability
       if user.admin?
         can :manage, :all
       else
+        can [:manage, :reviews], Review do |review|
+          review.try(:user_id) == user.id
+        end
         can :read, :all
       end
 

@@ -9,10 +9,12 @@ class ProductsController < ApplicationController
   end
 
   def new
+    authorize! :manage, @product
     @product = Product.new
   end
 
   def create
+    authorize! :manage, @product
     @product = Product.new(product_params)
     if @product.save
       redirect_to @product, notice: 'Product was successfully saved'
@@ -26,6 +28,7 @@ class ProductsController < ApplicationController
   end
 
   def update
+    authorize! :manage, @product
     if @product.update(product_params)
       redirect_to @product, notice: 'Product has been updated'
     else
@@ -34,6 +37,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    authorize! :manage, @product
     @product.destroy
     redirect_to :index
   end

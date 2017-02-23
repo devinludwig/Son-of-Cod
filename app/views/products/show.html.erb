@@ -18,8 +18,8 @@
     <li class="list-group-item">
       <h3>
         <%= review.content %>
-        <% if can? :manage, @product %>
-            <%= link_to "Delete", product_review_path(review), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right" %>
+        <% if can? :manage, review %>
+            <%= link_to "Delete", product_review_path(@product, review), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right" %>
         <% end %>
       </h3>
     </li>
